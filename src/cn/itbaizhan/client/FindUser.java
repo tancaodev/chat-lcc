@@ -53,7 +53,7 @@ public class FindUser extends JDialog {
 	public FindUser(Frame info, String title, boolean b,
 			UserBean user, PersonelView father) {
 		super(info, title, b);
-		this.setSize(555, 447);
+		this.setSize(650, 500); // Tăng kích thước cửa sổ
 		this.setLayout(null);
 		this.setLocationRelativeTo(null);
 		this.user = user;
@@ -96,8 +96,8 @@ public class FindUser extends JDialog {
 
 	public void init() {
 		jLtitlepic.setBounds(5, 5, 20, 18);
-		jLtitlename.setFont(new Font("SimSun", Font.BOLD, 11));
-		jLtitlename.setBounds(30, 2, 200, 25);
+		jLtitlename.setFont(new Font("Arial", Font.BOLD, 14));
+		jLtitlename.setBounds(30, 2, 300, 25);
 		jLhead.setBounds(15, 40, 96, 93);
 		jLinfo5.setBounds(15, 40, 96, 93);
 		jLchageHead.setBounds(0, 133, 134, 284);
@@ -105,60 +105,61 @@ public class FindUser extends JDialog {
 		info2.setBounds(0, 40, 15, 93);
 		info3.setBounds(0, 0, 111, 40);
 		info4.setBounds(133, 0, 432, 40);
-		jLname_num.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLname_num.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLname_num.setForeground(Color.BLACK);
-		jLname_num.setBounds(150, 50, 200, 25);
-		jLqqage.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLname_num.setBounds(150, 50, 300, 25);
+		jLqqage.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLqqage.setForeground(Color.BLACK);
-		jLqqage.setBounds(150, 80, 60, 25);
-		jLqq_age.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLqqage.setBounds(150, 80, 100, 25);
+		jLqq_age.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLqq_age.setForeground(Color.BLACK);
-		jLqq_age.setBounds(210, 80, 30, 25);
-		jLrank.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLqq_age.setBounds(250, 80, 50, 25);
+		jLrank.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLrank.setForeground(Color.BLACK);
-		jLrank.setBounds(280, 80, 65, 25);
-		jLrankPic.setBounds(350, 84, 15, 17);
-		jLrealName.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLrank.setBounds(320, 80, 100, 25);
+		jLrankPic.setBounds(420, 84, 15, 17);
+		jLrealName.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLrealName.setForeground(Color.BLACK);
-		jLrealName.setBounds(150, 110, 130, 25);
-		jLengName.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLrealName.setBounds(150, 110, 200, 25);
+		jLengName.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLengName.setForeground(Color.BLACK);
-		jLengName.setBounds(280, 110, 130, 25);
-		jLcomment.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLengName.setBounds(360, 110, 200, 25);
+		jLcomment.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLcomment.setForeground(Color.BLACK);
-		jLcomment.setBounds(150, 140, 130, 25);
-		jLsign.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLcomment.setBounds(150, 140, 200, 25);
+		jLsign.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLsign.setForeground(Color.BLACK);
-		jLsign.setBounds(150, 170, 405, 25);
+		jLsign.setBounds(150, 170, 450, 25);
 		jLshowInfo5.setBounds(111, 200, 454, 20);
-		jLsex.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLsex.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLsex.setForeground(Color.BLACK);
-		jLsex.setBounds(150, 230, 80, 25);
-		jLage.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLsex.setBounds(150, 230, 100, 25);
+		jLage.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLage.setForeground(Color.BLACK);
-		jLage.setBounds(250, 230, 70, 25);
-		jLbirth.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLage.setBounds(260, 230, 100, 25);
+		jLbirth.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLbirth.setForeground(Color.BLACK);
-		jLbirth.setBounds(340, 230, 215, 25);
-		jLblood.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLbirth.setBounds(370, 230, 250, 25);
+		jLblood.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLblood.setForeground(Color.BLACK);
-		jLblood.setBounds(150, 260, 80, 25);
-		jLanimal.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLblood.setBounds(150, 260, 100, 25);
+		jLanimal.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLanimal.setForeground(Color.BLACK);
-		jLanimal.setBounds(250, 260, 70, 25);
-		jLconstellation.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLanimal.setBounds(260, 260, 100, 25);
+		jLconstellation.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLconstellation.setForeground(Color.BLACK);
-		jLconstellation.setBounds(340, 260, 215, 25);
-		jLlocation.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLconstellation.setBounds(370, 260, 250, 25);
+		jLlocation.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLlocation.setForeground(Color.BLACK);
-		jLlocation.setBounds(150, 290, 405, 25);
-		jLaddress.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLlocation.setBounds(150, 290, 450, 25);
+		jLaddress.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLaddress.setForeground(Color.BLACK);
-		jLaddress.setBounds(150, 320, 405, 25);
-		jLmail.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLaddress.setBounds(150, 320, 450, 25);
+		jLmail.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLmail.setForeground(Color.BLACK);
-		jLmail.setBounds(150, 350, 405, 25);
-		jBaddUser.setBounds(392, 388, 64, 23);
+		jLmail.setBounds(150, 350, 450, 25);
+		jBaddUser.setBounds(470, 420, 64, 23);
+		jBclose.setBounds(550, 420, 65, 21);
 		jBaddUser.addActionListener(new ActionListener() {
 
 			@Override
@@ -169,7 +170,6 @@ public class FindUser extends JDialog {
 			}
 
 		});
-		jBclose.setBounds(470, 388, 65, 21);
 		jBclose.addActionListener(new ActionListener() {
 
 			@Override
@@ -193,7 +193,7 @@ public class FindUser extends JDialog {
 		jLaddress.setText("Current Location: " + user.getAddress());
 		jLlocation.setText("Address: " + user.getAddress());
 		jLhead.setIcon(new ImageIcon(user.getPortrait()));
-		
+
 		// Calculate age from YYYY-MM-DD format
 		String birthDate = user.getBirth();
 		if (birthDate != null && !birthDate.isEmpty()) {
@@ -203,7 +203,7 @@ public class FindUser extends JDialog {
 				int currentYear = java.time.Year.now().getValue();
 				age = String.valueOf(currentYear - birthYear);
 				jLage.setText("Age: " + age);
-				
+
 				// Get month for constellation
 				month = Integer.parseInt(birthDate.substring(5, 7));
 				switch (month) {

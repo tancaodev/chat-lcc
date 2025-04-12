@@ -38,7 +38,7 @@ public class HomePage extends JFrame {
 	HomePage enter;
 
 	public HomePage() {
-		this.setSize(380, 290);
+		this.setSize(500, 320);
 		this.setLocationRelativeTo(null);
 		this.setLayout(null);
 		this.setTitle("We_Talk");
@@ -63,23 +63,23 @@ public class HomePage extends JFrame {
 	}
 
 	public void init() {
-		jLtitle.setBounds(0, 0, 380, 105);
+		jLtitle.setBounds(0, 0, 500, 105);
 		jTusernumber.setBounds(120, 110, 160, 28);
 		jPassword.setBounds(120, 145, 160, 28);
-		rememberPass.setFont(new Font("SimSun", Font.PLAIN, 10));
+		rememberPass.setFont(new Font("Arial", Font.PLAIN, 10));
 		rememberPass.setForeground(Color.BLACK);
-		rememberPass.setBounds(148, 175, 70, 25);
-		Autologon.setFont(new Font("SimSun", Font.PLAIN, 10));
+		rememberPass.setBounds(120, 175, 140, 25);
+		Autologon.setFont(new Font("Arial", Font.PLAIN, 10));
 		Autologon.setForeground(Color.BLACK);
-		Autologon.setBounds(220, 175, 70, 25);
+		Autologon.setBounds(270, 175, 120, 25);
 		jLhead.setBounds(20, 105, 87, 90);
-		jBmore.setFont(new Font("SimSun", Font.PLAIN, 10));
+		jBmore.setFont(new Font("Arial", Font.PLAIN, 10));
 		jBmore.setForeground(Color.BLACK);
-		jBmore.setBounds(10, 225, 70, 23);
-		jBset.setFont(new Font("SimSun", Font.PLAIN, 10));
-		jBset.setBounds(95, 225, 55, 23);
-		jBenter.setFont(new Font("SimSun", Font.PLAIN, 10));
-		jBenter.setBounds(300, 225, 55, 23);
+		jBmore.setBounds(10, 255, 80, 23);
+		jBset.setFont(new Font("Arial", Font.PLAIN, 10));
+		jBset.setBounds(95, 255, 80, 23);
+		jBenter.setFont(new Font("Arial", Font.PLAIN, 10));
+		jBenter.setBounds(400, 255, 80, 23);
 		jBenter.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -105,7 +105,8 @@ public class HomePage extends JFrame {
 				}
 				if (!pass) {
 					personelView.setVisible(false);
-					JOptionPane.showMessageDialog(null, "The account number and password do not match, please re-enter");
+					JOptionPane.showMessageDialog(null,
+							"The account number and password do not match, please re-enter");
 					if (enter == null) {
 						enter = new HomePage();
 					}
@@ -157,9 +158,9 @@ public class HomePage extends JFrame {
 			}
 		}
 		JlRegist jLRegist = new JlRegist("Register Account");
-		jLRegist.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLRegist.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLRegist.setForeground(Color.BLUE);
-		jLRegist.setBounds(283, 110, 60, 28);
+		jLRegist.setBounds(283, 110, 150, 28);
 		this.add(jLRegist);
 
 		// Find password label as a hyperlink
@@ -190,7 +191,8 @@ public class HomePage extends JFrame {
 					public void mouseClicked(MouseEvent e) {
 						try {
 							Desktop.getDesktop().browse(
-									new java.net.URI("https://aq.qq.com/cn2/findpsw/pc/pc_find_pwd_input_account?source_id=1003&ptlang=2052&aquin=593253716"));
+									new java.net.URI(
+											"https://aq.qq.com/cn2/findpsw/pc/pc_find_pwd_input_account?source_id=1003&ptlang=2052&aquin=593253716"));
 						} catch (Exception ex) {
 						}
 					}
@@ -205,9 +207,9 @@ public class HomePage extends JFrame {
 			}
 		}
 		JlFindPass jLfindPass = new JlFindPass("Find Password");
-		jLfindPass.setFont(new Font("SimSun", Font.PLAIN, 13));
+		jLfindPass.setFont(new Font("Arial", Font.PLAIN, 13));
 		jLfindPass.setForeground(Color.BLUE);
-		jLfindPass.setBounds(283, 145, 60, 28);
+		jLfindPass.setBounds(283, 145, 150, 28);
 		this.add(jLfindPass);
 	}
 

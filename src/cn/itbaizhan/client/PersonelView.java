@@ -62,6 +62,8 @@ public class PersonelView extends JFrame implements Runnable {
 	/*------------------------------------- Interface Components ---------------------------------------------------*/
 	JPanel jPtop = new JPanel();// Top panel
 	JPanel jPcentre = new JPanel();// Center panel with tabs and list
+	JPanel jPgroupChat = new JPanel();// Group chat panel
+	JPanel jPrecentContacts = new JPanel();// Recent contacts panel
 	// Title
 	JLabel jLtitle = new JLabel("We_Talk");
 	// QQ avatar size 60*60
@@ -283,9 +285,36 @@ public class PersonelView extends JFrame implements Runnable {
 		jLmySign.setFont(new Font("SimSun", Font.PLAIN, 14));
 		jLmySign.setBounds(70, 55, 235, 25);
 		jLmySign.setComponentPopupMenu(jPmenuMy);
-		jTfind.setFont(new Font("SimSun", Font.BOLD, 12));
+		jTfind.setFont(new Font("Arial", Font.PLAIN, 12));
 		jTfind.setForeground(Color.GRAY);
 		jTfind.setBounds(3, 85, 260, 25);
+
+		// Thêm sự kiện focus cho placeholder
+		jTfind.addFocusListener(new java.awt.event.FocusAdapter() {
+			public void focusGained(java.awt.event.FocusEvent evt) {
+				if (jTfind.getText().equals("Search We_Talk account to add contact")) {
+					jTfind.setText("");
+					jTfind.setForeground(Color.BLACK);
+				}
+			}
+
+			public void focusLost(java.awt.event.FocusEvent evt) {
+				if (jTfind.getText().isEmpty()) {
+					jTfind.setText("Search We_Talk account to add contact");
+					jTfind.setForeground(Color.GRAY);
+				}
+			}
+		});
+
+		// Thêm sự kiện khi nhập liệu
+		jTfind.addKeyListener(new java.awt.event.KeyAdapter() {
+			public void keyTyped(java.awt.event.KeyEvent evt) {
+				if (jTfind.getText().equals("Search We_Talk account to add contact")) {
+					jTfind.setText("");
+					jTfind.setForeground(Color.BLACK);
+				}
+			}
+		});
 		jBfind.setBounds(267, 87, 19, 21);
 		jBfind.addActionListener(new ActionListener() {
 
@@ -315,24 +344,6 @@ public class PersonelView extends JFrame implements Runnable {
 		jPmenufriend.add(jM5);
 		jPmenufriend.add(jM6);
 		jPmenufriend.add(jM7);
-		jM7.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				path = "src/chat history/" + myInfo.getUserNum() + "-" + currentFriend.getUserNum() + ".txt";
-				try {
-					bufr = new BufferedReader(
-							new InputStreamReader(new FileInputStream(
-									path)));
-				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				SaveChat save = new SaveChat(PersonelView.this, "Chat History", true, bufr);
-				save.setVisible(true);
-			}
-		});
 		jPmenufriend.add(jM8);
 		jM1.setFont(new Font("SimSun", Font.PLAIN, 14));
 		jM1.setForeground(Color.BLUE);
@@ -418,79 +429,44 @@ public class PersonelView extends JFrame implements Runnable {
 		userList.setComponentPopupMenu(jPmenufriend);
 		jTPchoose.setForeground(Color.DARK_GRAY);
 		jTPchoose.setBackground(Color.WHITE);
-		jTPchoose.setFont(new Font("SimSun", Font.PLAIN, 11));
+		jTPchoose.setFont(new Font("Arial", Font.PLAIN, 11));
 		jTPchoose.addTab("Contacts", jPcentre);
-		jTPchoose.addTab("Group/Chat", j1);
-		jTPchoose.addTab("Recent Contacts", j2);
-		jTPchoose.addTab("Settings", j3);
-		jTPchoose.addTab("WeChat", j4);
+		jTPchoose.addTab("Group Chat", jPgroupChat);
+		jTPchoose.addTab("Recent Contacts", jPrecentContacts);
 		jTPchoose.setBounds(0, 117, 313, 382);
+
+		// Cấu hình panel cho Group Chat
+		jPgroupChat.setLayout(new BorderLayout());
+		JLabel groupChatLabel = new JLabel("Group Chat");
+		groupChatLabel.setFont(new Font("Arial", Font.PLAIN, 14));
+		groupChatLabel.setForeground(Color.BLACK);
+		jPgroupChat.add(BorderLayout.NORTH, groupChatLabel);
+		jPgroupChat.add(jSuserList);
+		jPgroupChat.setBackground(Color.WHITE);
+		jPgroupChat.setBorder(javax.swing.BorderFactory.createLineBorder(Color.LIGHT_GRAY));
+
+		// Cấu hình panel cho Recent Contacts
+		jPrecentContacts.setLayout(new BorderLayout());
+		JLabel recentContactsLabel = new JLabel("Recent Contacts");
+		recentContactsLabel.setFont(new Font("Arial", Font.PLAIN, 14));
+		recentContactsLabel.setForeground(Color.BLACK);
+		jPrecentContacts.add(BorderLayout.NORTH, recentContactsLabel);
+		jPrecentContacts.add(jSuserList);
+		jPrecentContacts.setBackground(Color.WHITE);
+		jPrecentContacts.setBorder(javax.swing.BorderFactory.createLineBorder(Color.LIGHT_GRAY));
+
+		// Cấu hình panel cho Contacts
 		jPcentre.setLayout(new BorderLayout());
-		JLabel test = new JLabel("Friend List");
-		test.setFont(new Font("SimSun", Font.PLAIN, 14));
-		test.setSize(313, 30);
-		test.setForeground(Color.BLACK);
-		jPmenuser.add(jM11);
-		jPmenuser.add(jM12);
-		jPmenuser.add(jM13);
-		jPmenuser.add(jM14);
-		jPmenuser.add(jM15);
-		jPmenuser.add(jM16);
-		jPmenuser.add(jM17);
-		jPmenuser.add(jM18);
-		jM11.setFont(new Font("SimSun", Font.PLAIN, 14));
-		jM11.setForeground(Color.DARK_GRAY);
-		jM12.setFont(new Font("SimSun", Font.PLAIN, 14));
-		jM12.setForeground(Color.DARK_GRAY);
-		jM13.setFont(new Font("SimSun", Font.PLAIN, 14));
-		jM13.setForeground(Color.DARK_GRAY);
-		jM14.setFont(new Font("SimSun", Font.PLAIN, 14));
-		jM14.setForeground(Color.DARK_GRAY);
-		jM14.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				PrintNumFindUser printNum = new PrintNumFindUser(PersonelView.this, "Add Contact", false,
-						PersonelView.this);
-				printNum.setVisible(true);
-			}
-		});
-		jM15.setFont(new Font("SimSun", Font.PLAIN, 14));
-		jM15.setForeground(Color.DARK_GRAY);
-		jM15.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				PrintNumFindUser printNum = new PrintNumFindUser(PersonelView.this, "Find User", false,
-						PersonelView.this);
-				printNum.setVisible(true);
-			}
-
-		});
-		jM16.setFont(new Font("SimSun", Font.PLAIN, 14));
-		jM16.setForeground(Color.DARK_GRAY);
-		jM17.setFont(new Font("SimSun", Font.PLAIN, 14));
-		jM17.setForeground(Color.DARK_GRAY);
-		jM18.setFont(new Font("SimSun", Font.PLAIN, 14));
-		jM18.setForeground(Color.DARK_GRAY);
-		jM18.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				AboutMy a = new AboutMy(PersonelView.this, "About QQ", true);
-				a.setVisible(true);
-			}
-
-		});
-		test.setComponentPopupMenu(jPmenuser);
+		JLabel contactsLabel = new JLabel("Contacts");
+		contactsLabel.setFont(new Font("Arial", Font.PLAIN, 14));
+		contactsLabel.setForeground(Color.BLACK);
+		jPcentre.add(BorderLayout.NORTH, contactsLabel);
+		jPcentre.add(jSuserList);
 		jPcentre.setBackground(Color.WHITE);
-		jPcentre.setBounds(0, 117, 313, 382);
+		jPcentre.setBorder(javax.swing.BorderFactory.createLineBorder(Color.LIGHT_GRAY));
 		userList.addMouseListener(new PersonelView_userList_mouseAdapter());
 		userList.addMouseMotionListener(new PersonelView_userList_mouseMotionAdapter());
-		jPcentre.add(BorderLayout.NORTH, test);
+		jPcentre.add(BorderLayout.NORTH, contactsLabel);
 		jPcentre.add(jSuserList);
 		// Bottom
 		jLbase.setBounds(0, 499, 304, 51);
