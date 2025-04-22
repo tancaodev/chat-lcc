@@ -40,8 +40,6 @@ public class Register extends JFrame {
 	String y;
 	String m;
 	String d;
-	JLabel jLtop = new JLabel(new ImageIcon("src/file/regist1.jpg"));
-	JLabel jLeft = new JLabel(new ImageIcon("src/file/regist2.jpg"));
 	JLabel jLname = new JLabel("Nickname");
 	JLabel alertName = new JLabel("Please enter nickname");
 	JLabel alertPass = new JLabel("Password must be 6-16 characters, no spaces");
@@ -76,34 +74,32 @@ public class Register extends JFrame {
 	public Register() {
 		this.setSize(800, 700);
 		this.setLocationRelativeTo(null);
-		this.setLayout(null);
+		getContentPane().setLayout(null);
 		this.setTitle("We_Talk Registration");
 		init();
-		this.add(jLtop);
-		this.add(jLeft);
-		this.add(jLname);
-		this.add(jTname);
-		this.add(jLpass);
-		this.add(jPass);
-		this.add(jLRepass);
-		this.add(jRepass);
-		this.add(jLsex);
-		this.add(jRboy);
-		this.add(jRgirl);
-		this.add(jLbirth);
-		this.add(jyear);
-		this.add(jmonth);
-		this.add(jday);
-		this.add(year);
-		this.add(month);
-		this.add(day);
-		this.add(jLplace);
-		this.add(jTplace);
-		this.add(jService);
-		this.add(jBregist);
-		this.add(alertName);
-		this.add(alertPass);
-		this.add(alertRePass);
+		getContentPane().add(jLname);
+		getContentPane().add(jTname);
+		getContentPane().add(jLpass);
+		getContentPane().add(jPass);
+		getContentPane().add(jLRepass);
+		getContentPane().add(jRepass);
+		getContentPane().add(jLsex);
+		getContentPane().add(jRboy);
+		getContentPane().add(jRgirl);
+		getContentPane().add(jLbirth);
+		getContentPane().add(jyear);
+		getContentPane().add(jmonth);
+		getContentPane().add(jday);
+		getContentPane().add(year);
+		getContentPane().add(month);
+		getContentPane().add(day);
+		getContentPane().add(jLplace);
+		getContentPane().add(jTplace);
+		getContentPane().add(jService);
+		getContentPane().add(jBregist);
+		getContentPane().add(alertName);
+		getContentPane().add(alertPass);
+		getContentPane().add(alertRePass);
 	}
 
 	public void init() {
@@ -128,43 +124,39 @@ public class Register extends JFrame {
 		int startY = 100; // Start from top
 		int labelWidth = 150; // Increased label width
 		int inputWidth = 220; // Input field width
-		int spacing = 20; // Spacing between label and input
-
-		// Set bounds with centered positions
-		jLtop.setBounds(0, 0, windowWidth, 100);
-		jLeft.setBounds(0, 100, 227, 600);
+		int spacing = 20;
 
 		// Labels and fields
 		jLname.setBounds(startX, startY, labelWidth, 50);
-		jTname.setBounds(startX + labelWidth + spacing, startY, inputWidth, 45);
-		alertName.setBounds(startX + labelWidth + spacing + inputWidth + 10, startY + 5, 200, 20);
+		jTname.setBounds(290, 100, inputWidth, 45);
+		alertName.setBounds(515, 100, 270, 45);
 
 		jLpass.setBounds(startX, startY + 70, labelWidth, 50);
-		jPass.setBounds(startX + labelWidth + spacing, startY + 70, inputWidth, 45);
-		alertPass.setBounds(startX + labelWidth + spacing + inputWidth + 10, startY + 75, 200, 20);
+		jPass.setBounds(290, 175, inputWidth, 45);
+		alertPass.setBounds(515, 175, 270, 45);
 
 		jLRepass.setBounds(startX, startY + 140, labelWidth, 50);
-		jRepass.setBounds(startX + labelWidth + spacing, startY + 140, inputWidth, 45);
-		alertRePass.setBounds(startX + labelWidth + spacing + inputWidth + 10, startY + 145, 200, 20);
+		jRepass.setBounds(290, 245, inputWidth, 45);
+		alertRePass.setBounds(515, 245, 270, 45);
 
 		jLsex.setBounds(startX, startY + 210, labelWidth, 50);
-		jRboy.setBounds(startX + labelWidth + spacing, startY + 210, 70, 50);
-		jRgirl.setBounds(startX + labelWidth + spacing + 80, startY + 210, 70, 50);
+		jRboy.setBounds(290, 311, 70, 50);
+		jRgirl.setBounds(405, 311, 105, 50);
 
 		// Birthday section
 		jLbirth.setBounds(startX, startY + 280, labelWidth, 50);
-		jyear.setBounds(startX + labelWidth + spacing, startY + 280, 30, 35);
-		year.setBounds(startX + labelWidth + spacing + 35, startY + 280, 70, 35);
-		jmonth.setBounds(startX + labelWidth + spacing + 110, startY + 280, 30, 35);
-		month.setBounds(startX + labelWidth + spacing + 145, startY + 280, 60, 35);
-		jday.setBounds(startX + labelWidth + spacing + 210, startY + 280, 30, 35);
-		day.setBounds(startX + labelWidth + spacing + 245, startY + 280, 60, 35);
+		jyear.setBounds(290, 380, 45, 50);
+		year.setBounds(345, 389, 100, 35);
+		jmonth.setBounds(450, 380, 45, 50);
+		month.setBounds(500, 390, 100, 35);
+		jday.setBounds(610, 380, 45, 50);
+		day.setBounds(660, 390, 100, 35);
 
 		jLplace.setBounds(startX, startY + 350, labelWidth, 50);
-		jTplace.setBounds(startX + labelWidth + spacing, startY + 350, inputWidth, 45);
+		jTplace.setBounds(290, 450, inputWidth, 45);
 
-		jService.setBounds(startX + labelWidth + spacing, startY + 420, 250, 25);
-		jBregist.setBounds(startX + labelWidth + spacing, startY + 450, 200, 60);
+		jService.setBounds(290, 520, 250, 25);
+		jBregist.setBounds(290, 570, 200, 60);
 
 		// Set fonts with adjusted sizes
 		Font arial18 = new Font("Arial", Font.PLAIN, 18);
@@ -203,7 +195,7 @@ public class Register extends JFrame {
 		alertPass.setForeground(Color.BLACK);
 		alertRePass.setForeground(Color.BLACK);
 		jBregist.setBackground(Color.green);
-		jBregist.setForeground(Color.white);
+		jBregist.setForeground(new Color(0, 0, 0));
 		year.setBackground(Color.WHITE);
 		month.setBackground(Color.WHITE);
 		day.setBackground(Color.WHITE);
